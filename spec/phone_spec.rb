@@ -19,5 +19,20 @@ describe(Phone) do
     end
   end
 
+  describe("#save") do
+    it("saves the phone number to the array of phone numbers") do
+      test_number = Phone.new({:number => 5037998459})
+      test_number.save()
+      expect(Phone.all()).to(eq([test_number]))
+    end
+  end
+
+  describe(".clear") do
+    it('empties out all of the saved phone numbers') do
+      test_number = Phone.new({:number => 5037998459})
+      Phone.clear()
+      expect(Phone.all()).to(eq([]))
+    end
+  end
 
 end

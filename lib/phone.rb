@@ -14,4 +14,12 @@ class Phone
   define_singleton_method(:all) do
     @@all_numbers
   end
+
+  define_method(:save) do
+    @@all_numbers.push(self)
+  end
+
+  define_singleton_method(:clear) do
+    @@all_numbers = []
+  end
 end
