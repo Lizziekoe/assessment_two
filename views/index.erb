@@ -2,14 +2,19 @@
 
 <h3>Add a Contact Name Here:</h3>
 
-<form action="/phonenumbers" method="post">
+<form action="/contacts" method="post">
   <label for='contact'>Contact's name:</label>
   <input id='contact' name='contact' type='text'>
-  <button type="submit"> Add Dealership</button>
+  <button type="submit" class='btn btn-success'> Add Contact</button>
 </form>
 
-<ul>
-  <% @all_contacts.each() do |contact| %>
-    <li><a href="/phonenumbers/<%=contact.id() %>"><%= contact.name() %></a></li>
+
+<% if @all_contacts == [] %>
+  <p>There are currently no contacts stored.</p>
+<% else @all_contacts.each() do |contact| %>
+  <ul>
+    <li><a href="/contacts/<%= contact.id() %>"><%= contact.name() %></a></li>
+  </ul>
   <% end %>
-</ul>
+<% end %>
+
