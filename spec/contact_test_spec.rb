@@ -59,8 +59,17 @@ describe(Contact) do
       test_contact_number = Phone.new({:number => 5033333333})
       test_contact_name.add_number(test_contact_number)
       expect(test_contact_name.digits()).to(eq([test_contact_number]))
-
-      # is that a bandaid fix with the brackets around test contact number?
     end
   end
+
+  # describe("#delete_contact") do
+  #   it("deletes a specified contact") do
+  #     my_contact_one = Contact.new({:name=>"lizzie"}).save()
+  #     my_contact_two = Contact.new({:name=>"julia"}).save()
+  #     my_contacts = Contact.all()
+  #     contact_to_delete = Contact.find({:name => "lizzie"})
+  #     my_contacts.delete_contact(contact_to_delete)
+  #     expect(my_contacts.all()).to(eq([test_contact]))
+  #   end
+  # end
 end

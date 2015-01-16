@@ -30,3 +30,15 @@ post('/numbers') do
   @all_numbers = Phone.all()
   erb(:contacts)
 end
+
+post('/delete') do
+  contact = params['contact']
+  number = params['number']
+  if contact == ""
+    contact = nil
+  end
+  contact  = Contact.last()
+  ids = contact.find({:contact => contact})
+  contact.clear(ids)
+  redirect("/")
+end

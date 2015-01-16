@@ -31,4 +31,14 @@ class Contact
   define_method(:add_number) do |number|
     @digits.push(number)
   end
+
+  # define_method(:delete_contact) do |ids|
+  #   ids.each() do |id|
+  #     @all_contacts.each() do |contact|
+  #     if contactname.id() == id
+  #     @all_contacts.delete(contact)
+  #     end
+  #   end
+  # end
+# end
 end
