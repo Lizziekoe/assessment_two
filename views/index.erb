@@ -1,23 +1,15 @@
-<h1>PhoneBook</h1>
+<h1>Phonebook<h1>
 
-<!--   
+<h3>Add a Contact Name Here:</h3>
 
-<h3>Add an contact here:</h3>
+<form action="/phonenumbers" method="post">
+  <label for='contact'>Contact's name:</label>
+  <input id='contact' name='contact' type='text'>
+  <button type="submit"> Add Dealership</button>
+</form>
 
-<form action="/artists" method="post">
-  <label for='artist'>Contacts's name:</label>
-  <input id='artist' name='artist' type='text' required>
-  <br>
-  <button type='submit' class='btn btn-success'>Add CD</button>
-<form>
-
-  <br><br>
-
-<% if @artists == [] %>
-  <p>There are currently no artists stored.</p>
-<% else @artists.each() do |artist| %>
-  <ul>
-    <li><a href="/artists/<%= artist.id() %>"><%= artist.artist_name() %></a></li>
-  </ul>
+<ul>
+  <% @all_contacts.each() do |contact| %>
+    <li><a href="/phonenumbers/<%=contact.id() %>"><%= contact.name() %></a></li>
   <% end %>
-<% end %> -->
+</ul>
