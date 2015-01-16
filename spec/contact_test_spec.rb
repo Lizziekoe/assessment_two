@@ -1,5 +1,6 @@
 require('rspec')
 require('contact_test')
+require('phone')
 
 describe(Contact) do
   before() do
@@ -49,6 +50,17 @@ describe(Contact) do
       test_contact2 = Contact.new({:name => "julia"})
       test_contact2.save()
       expect(Contact.find(test_contact.id())).to(eq(test_contact))
+    end
+  end
+
+  describe("#add_number") do
+    it("adds a new phone number to the contact class") do
+      test_contact_name = Contact.new({:name => "lizzie"})
+      test_contact_number = Phone.new({:number => 5033333333})
+      test_contact_name.add_number(test_contact_number)
+      expect(test_contact_name.digits()).to(eq([test_contact_number]))
+
+      # is that a bandaid fix with the brackets around test contact number?
     end
   end
 end

@@ -35,4 +35,13 @@ describe(Phone) do
     end
   end
 
+  describe('.find') do
+    it("returns a phone number by its id number") do
+      test_number = Phone.new({:number => 5037998459})
+      test_number.save()
+      test_album_two = Phone.new({:number => 5033333333})
+      test_album_two.save()
+      expect(Phone.find(test_number.id())).to(eq(test_number))
+    end
+  end
 end
