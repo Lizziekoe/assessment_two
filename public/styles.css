@@ -1,0 +1,13 @@
+body {
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-align: center;
+	background-image: url("img/background.jpg");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+ul{
+	list-style-type: none
+}
